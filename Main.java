@@ -8,6 +8,7 @@ public class Main {
         addStudent("Alice");
         addStudent("Bob");
         viewStudents();
+        deleteStudent("Alice");
     }
     static void addStudent(String name) {
         students.add(name);
@@ -18,5 +19,9 @@ public class Main {
         System.out.println(s); 
         } 
     }
+    static void deleteStudent(String name) {  students.remove(name); 
+        System.out.println(name + " removed."); 
+    }
+
 
 }
