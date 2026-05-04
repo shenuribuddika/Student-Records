@@ -10,6 +10,7 @@ public class Main {
         viewStudents();
         deleteStudent("Alice");
         countStudents();
+        updateStudent("Bob", "Charlie");
     
     }
     static void addStudent(String name) {
@@ -26,7 +27,19 @@ public class Main {
     }
     static void countStudents() { 
         System.out.println("Total students: " + students.size()); 
-    } 
+    }
+    static void updateStudent(String oldName, String newName) {
+    for (int i = 0; i < students.size(); i++) {
+        if (students.get(i).equalsIgnoreCase(oldName)) {
+            students.set(i, newName);
+            System.out.println(oldName + " updated to " + newName);
+            return;
+        }
+    }
+
+    System.out.println(oldName + " not found.");
+    }
+
 
 
 
