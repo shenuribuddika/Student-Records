@@ -11,7 +11,9 @@ public class Main {
         deleteStudent("Alice");
         countStudents();
         updateStudent("Bob", "Charlie");
-    
+        addStudent("Alice");
+    addStudent("Bob");
+    searchStudent("alice"); 
     }
     static void addStudent(String name) {
         students.add(name);
@@ -39,6 +41,21 @@ public class Main {
 
     System.out.println(oldName + " not found.");
     }
+    static void searchStudent(String name) {
+    boolean found = false;
+
+    for (String s : students) {
+        if (s.equalsIgnoreCase(name)) {   // case-insensitive
+            System.out.println(name + " found.");
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        System.out.println(name + " not found.");
+    }
+}
 
 
 
